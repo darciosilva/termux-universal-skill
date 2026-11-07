@@ -36,9 +36,9 @@ Termux is a terminal emulator and Linux environment for Android. This skill cove
 - Sources: edit `/data/data/com.termux/files/usr/etc/apt/sources.list`
 
 ## 5. Text Editors
-- **nano**: simple, visual interface
-- **vim**: modes (normal, insert, visual), keybindings
-- **emacs**: extensible, modes
+- **nano**: Available by default. Simple, visual interface. Use `Ctrl+X` to exit, `Ctrl+O` to save.
+- **vim**: NOT installed by default. Install with `pkg install vim`. Modes: normal, insert, visual.
+- **emacs**: NOT installed by default. Install with `pkg install emacs`. Extensible, modes.
 - Others: `micro`, `code` (if installed)
 
 ## 6. Network Commands
@@ -58,7 +58,7 @@ Termux is a terminal emulator and Linux environment for Android. This skill cove
 ## 8. Development Tools
 
 ### Python
-- **Python 3**: `python3` - interpreted language
+- **Version**: Python 3.14.10 (verified)
 - **Pip**: `pip3` - package installer
 - **Virtualenv**: `virtualenv` or `python3 -m venv` - isolated environments
 - **Common packages**: `pip3 install numpy pandas flask django requests`
@@ -66,20 +66,19 @@ Termux is a terminal emulator and Linux environment for Android. This skill cove
 - **Interactive console**: `python3`
 
 ### Node.js
-- **Node.js**: `node` - JavaScript runtime
-- **npm**: `npm` - package manager
+- **Version**: Node.js v26.13.0, npm 12.2.1 (verified)
 - **Install packages**: `npm install <package>`
 - **Run scripts**: `node script.js`
 - **Global packages**: `npm install -g <package>`
 
 ### C/C++
-- **GCC**: `gcc` - C compiler
-- **G++**: `g++` - C++ compiler
-- **Make**: `make` - build automation
-- **CMake**: `cmake` - cross-platform build system
+- **Compiler**: `clang version 21.1.8` (gcc/g++ are symlinks to clang in Termux)
+- **Make**: GNU Make 4.4.1 (verified)
+- **CMake**: 4.4.4 (verified)
 - **Example**: `gcc -o hello hello.c && ./hello`
 
 ### Git
+- **Version**: Git 2.56.0 (verified)
 - **Clone**: `git clone <url>`
 - **Push**: `git push origin main`
 - **Pull**: `git pull origin main`
@@ -87,18 +86,18 @@ Termux is a terminal emulator and Linux environment for Android. This skill cove
 - **Branch**: `git branch`, `git checkout <branch>`
 
 ### Perl
-- **Perl**: `perl` - scripting language
+- **Version**: Perl 5.42.2 (verified)
 - **CPAN**: `cpan` - Perl package manager
 
 ### Ruby
-- **Ruby**: `ruby` - scripting language
+- **Version**: Ruby 4.0.7 (verified)
 - **Gem**: `gem` - Ruby package manager
 
-### Other Tools
-- **Rust**: `rustc`, `cargo` (if installed)
-- **Go**: `go` (if installed)
-- **Java**: `javac`, `java` (if installed)
-- **PHP**: `php`, `php-cgi` (if installed)
+### Other Tools (if installed)
+- **Rust**: `rustc`, `cargo`
+- **Go**: `go`
+- **Java**: `javac`, `java`
+- **PHP**: `php`, `php-cgi`
 
 ## 9. Termux-Specific Commands
 - `termux-am`: send am commands
@@ -175,10 +174,10 @@ Termux is a terminal emulator and Linux environment for Android. This skill cove
 - **Cloudflare Tunnel**: `cloudflared` for exposing local Termux servers safely without port forwarding.
 
 ## 16. Media & Productivity Utilities
-- **FFmpeg**: `ffmpeg -i input.mp4 output.mp3` - audio/video conversion and processing.
-- **yt-dlp**: `yt-dlp <URL>` - video/audio downloader.
-- **ImageMagick**: `convert input.jpg output.png` - image manipulation.
-- **Pandoc**: `pandoc input.md -o output.pdf` - document converter.
+- **FFmpeg**: Version 9.0.2 (verified). `ffmpeg -i input.mp4 output.mp3` - audio/video conversion and processing.
+- **yt-dlp**: Version 2021.06.01 (verified). `yt-dlp <URL>` - video/audio downloader.
+- **ImageMagick**: NOT installed by default. Install with `pkg install imagemagick`. `convert input.jpg output.png` - image manipulation.
+- **Pandoc**: NOT installed by default. Install with `pkg install pandoc`. `pandoc input.md -o output.pdf` - document converter.
 
 ## 17. Process Management & Background Tasks
 - **tmux**: `tmux new -s session_name`, `tmux attach -t session_name` - persistent terminal sessions.
