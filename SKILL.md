@@ -188,3 +188,45 @@ Termux is a terminal emulator and Linux environment for Android. This skill cove
 ## 18. Root Access (TSU / SU)
 - **tsu**: `pkg install tsu` - Termux wrapper for `su` preserving environment.
 - **Root commands**: `tsu` or `sudo` (if configured with tsu alias).
+
+
+## 19. Diagnóstico e Fallback (Quando uma Ferramenta Falha)
+
+Se uma ferramenta falhar ou comportar-se de forma inesperada, siga este fluxo de diagnóstico antes de tentar soluções alternativas:
+
+### Passo 1: Verifique a Versão
+```bash
+<ferramenta> --version
+```
+Isso confirma se a versão instalada é compatível com o que você espera.
+
+### Passo 2: Consulte o Help
+```bash
+<ferramenta> --help
+<ferramenta> -h
+```
+Muitos erros de uso comum (sintaxe incorreta, opções desatualizadas) são revelados pela ajuda.
+
+### Passo 3: Verifique se a Ferramenta está Instalada
+```bash
+command -v <ferramenta>
+```
+Se não retornar nada, a ferramenta não está instalada. Instale com:
+```bash
+pkg install <ferramenta>
+```
+
+### Passo 4: Procure por Mensagens de Erro Específicas
+Analisando a saída de erro, identifique:
+- Permissões insuficientes? Use `tsu` para root.
+- Dependências faltando? Use `pkg install` para adicioná-las.
+- Caminho incorreto? Verifique com `which` ou `command -v`.
+
+### Exemplo Prático
+Se `ffmpeg -i video.mp4 output.mp3` falhar:
+1. `ffmpeg -version` → confirma versão
+2. `ffmpeg -h` → verifica sintaxe correta
+3. `command -v ffmpeg` → confirma instalação
+4. Analisa erro: talvez faltando codec? Use `pkg install ffmpeg` para reinstalar.
+
+**Princípio Chave:** Antes de assumir que uma ferramenta está quebrada, verifique sempre a versão e o help. Muitas vezes, o problema é apenas uma opção desatualizada ou um argumento incorreto.
